@@ -33,9 +33,7 @@ jobs:
       - deploy:
           name: Push application Docker image
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              docker tag shinyproxy tetherlessworld/hadatac-shinyproxy:latest
-              docker tag shinyproxy tetherlessworld/hadatac-shinyproxy:2.6.0
+            if [ "${CIRCLE_BRANCH}" == "main" ]; then
+              docker tag shinyproxy:latest tetherlessworld/hadatac-shinyproxy:latest
               docker push tetherlessworld/hadatac-shinyproxy:latest
-              docker push tetherlessworld/hadatac-shinyproxy:2.6.0
             fi
