@@ -37,8 +37,3 @@ jobs:
               docker tag shinyproxy tetherlessworld/hadatac-shinyproxy
               docker push tetherlessworld/hadatac-shinyproxy
             fi
-
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
