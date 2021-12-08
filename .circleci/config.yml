@@ -34,6 +34,7 @@ jobs:
           name: Push application Docker image
           command: |
             if [ "${CIRCLE_BRANCH}" == "main" ]; then
+              docker login -u "${DOCKER_HUB_LOGIN}" -p "${DOCKER_HUB_TOKEN}"
               docker tag shinyproxy:latest tetherlessworld/hadatac-shinyproxy:latest
               docker push tetherlessworld/hadatac-shinyproxy:latest
             fi
