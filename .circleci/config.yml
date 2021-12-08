@@ -4,7 +4,6 @@ jobs:
   build:
     docker:
       - image: docker:git
-    context: docker-hub
     steps:
       - checkout
       - setup_remote_docker
@@ -39,3 +38,10 @@ jobs:
               docker tag shinyproxy:latest tetherlessworld/hadatac-shinyproxy:latest
               docker push tetherlessworld/hadatac-shinyproxy:latest
             fi
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build
+          context: docker-hub
