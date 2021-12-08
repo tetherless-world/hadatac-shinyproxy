@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            apk add --no-cache \
+            apk update && apk add --no-cache \
             wget
       - restore_cache:
           keys:
