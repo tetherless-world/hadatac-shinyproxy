@@ -7,6 +7,12 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apt update && apt install -y --no-install-recommends \
+            wget \
+            && rm -rf /var/lib/apt/lists/*
       - restore_cache:
           keys:
             - v1-{{ .Branch }}
