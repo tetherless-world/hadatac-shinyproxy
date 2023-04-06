@@ -4,6 +4,7 @@ RUN apt update && apt install -y \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
+
 RUN mkdir -p /opt/shinyproxy/
 
 WORKDIR /opt/shinyproxy/
