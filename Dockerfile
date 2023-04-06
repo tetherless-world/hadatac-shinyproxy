@@ -1,9 +1,6 @@
 FROM eclipse-temurin:17-jre-alpine
 
-RUN apt update && apt install -y \
-    wget \
-    && rm -rf /var/lib/apt/lists/*
-
+RUN apk update && apk add --no-cache wget
 
 RUN mkdir -p /opt/shinyproxy/
 
