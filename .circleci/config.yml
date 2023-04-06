@@ -35,8 +35,8 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "main" ]; then
               echo "${DOCKER_HUB_TOKEN}" | docker login --username "${DOCKER_HUB_USER}" --password-stdin
-              docker tag shinyproxy:latest tetherlessworld/hadatac-shinyproxy:latest
-              docker push tetherlessworld/hadatac-shinyproxy:latest
+              docker tag shinyproxy:latest tetherlessworld/hadatac-shinyproxy:2.6.1
+              docker push tetherlessworld/hadatac-shinyproxy:2.6.1
             fi
 
 workflows:
