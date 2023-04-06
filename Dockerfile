@@ -1,7 +1,6 @@
 FROM eclipse-temurin:17-jre-alpine
 
 RUN apk update && apk add --no-cache wget
-
 RUN mkdir -p /opt/shinyproxy/
 
 WORKDIR /opt/shinyproxy/
